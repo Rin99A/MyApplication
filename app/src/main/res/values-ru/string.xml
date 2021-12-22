@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TimeTurner</string>
+    <string name="btn_timetable">Расписание</string>
+    <string name="btn_students">Ученики</string>
+    <string name="btn_settings">Настройки</string>
+    <string name="ttl_timetable">Расписание</string>
+    <string name="ttl_students">Ученики</string>
+    <string name="ttl_settings">Настройки</string>
+    <string name="language">Язык</string>
+    <string name="add_st">Добавить ученика</string>
+    <string name="name">Имя</string>
+    <string name="grade">Класс</string>
+    <string name="duration">Длительность</string>
+    <string name="purpose">Цель</string>
+    <string name="cost">Цена</string>
+    <string name="add">Добавить</string>
+    <string name="close">Закрыть</string>
+    <string name="enter">Введите</string>
+    <string name="stadded">Ученик добавлен</string>
+    <string name="error">Ошибка</string>
+    <string name="delete">Удалить</string>
+    <string name="add_l">Добавить урок</string>
+    <string name="day">День</string>
+    <string name="time">Время</string>
+    <string name="mon">Понедельник</string>
+    <string name="tue">Вторник</string>
+    <string name="wed">Среда</string>
+    <string name="thu">Четверг</string>
+    <string name="fri">Пятница</string>
+    <string name="sat">Суббота</string>
+    <string name="sun">Воскресенье</string>
+</resources>

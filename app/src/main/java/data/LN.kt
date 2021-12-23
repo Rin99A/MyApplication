@@ -8,7 +8,9 @@ import androidx.room.PrimaryKey
 data class LN(
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null,
+    @ColumnInfo
     val day: String,
+    @ColumnInfo
     val time: String,
 
     @ColumnInfo(name = "student")

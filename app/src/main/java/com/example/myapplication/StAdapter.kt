@@ -14,7 +14,7 @@ class StAdapter(private val students: List<StudentsTable>) :
     class StViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView
         val grade: TextView
-        val duration:TextView
+        val duration: TextView
         val purpose: TextView
         val cost: TextView
 
@@ -33,9 +33,6 @@ class StAdapter(private val students: List<StudentsTable>) :
         return students.size
     }
 
-    /*fun setData(astlist: List<String>) {
-        names = astlist as List<String>
-    }*/
 
     fun setOnClickListener(l: AdapterView.OnItemClickListener) {
         listener = l

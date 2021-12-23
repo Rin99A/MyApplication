@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,10 +29,14 @@ class Timetable : AppCompatActivity() {
 
 
         this.let {
-            val l = Db.getDatabase(it.applicationContext).LesDaysDao().getm()
+            val l = Db.getDatabase(it.applicationContext).LNDao().getAll()
+           // Log.d("LOGLOGLOG", l.toString())
+
             Monday.layoutManager =
                 LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            Monday.adapter = LesAdapter(l)
+            Monday.adapter = LesAdapter(l.filter { item -> item.day == "Понедельник" }.map { item ->
+                Pair(item.student, item.time)
+            })
             Monday.addOnItemTouchListener(
                 RecyclerItemClickListener(this, Monday, object :
                     RecyclerItemClickListener.OnItemClickListener {
@@ -41,7 +46,7 @@ class Timetable : AppCompatActivity() {
 
                     override fun onLongItemClick(view: View?, position: Int) {
 
-                        Db.getDatabase(this@Timetable).LesDaysDao().delete(l[position])
+                        Db.getDatabase(this@Timetable).LNDao().delete(l[position])
 
                         val i = Intent(this@Timetable, Timetable::class.java)
                         i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
@@ -53,10 +58,12 @@ class Timetable : AppCompatActivity() {
         }
 
         this.let {
-            val l = Db.getDatabase(it.applicationContext).LesDaysDao().gett()
+            val l = Db.getDatabase(it.applicationContext).LNDao().getAll()
             Tuesday.layoutManager =
                 LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            Tuesday.adapter = LesAdapter(l)
+            Tuesday.adapter = LesAdapter(l.filter { item -> item.day == "Вторник" }.map { item ->
+                Pair(item.student, item.time)
+            })
             Tuesday.addOnItemTouchListener(
                 RecyclerItemClickListener(this, Tuesday, object :
                     RecyclerItemClickListener.OnItemClickListener {
@@ -66,7 +73,7 @@ class Timetable : AppCompatActivity() {
 
                     override fun onLongItemClick(view: View?, position: Int) {
 
-                        Db.getDatabase(this@Timetable).LesDaysDao().delete(l[position])
+                        Db.getDatabase(this@Timetable).LNDao().delete(l[position])
 
                         val i = Intent(this@Timetable, Timetable::class.java)
                         i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
@@ -78,10 +85,12 @@ class Timetable : AppCompatActivity() {
         }
 
         this.let {
-            val l = Db.getDatabase(it.applicationContext).LesDaysDao().getц()
+            val l = Db.getDatabase(it.applicationContext).LNDao().getAll()
             Wednesday.layoutManager =
                 LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            Wednesday.adapter = LesAdapter(l)
+            Wednesday.adapter = LesAdapter(l.filter { item -> item.day == "Среда" }.map { item ->
+                Pair(item.student, item.time)
+            })
             Wednesday.addOnItemTouchListener(
                 RecyclerItemClickListener(this, Wednesday, object :
                     RecyclerItemClickListener.OnItemClickListener {
@@ -91,7 +100,7 @@ class Timetable : AppCompatActivity() {
 
                     override fun onLongItemClick(view: View?, position: Int) {
 
-                        Db.getDatabase(this@Timetable).LesDaysDao().delete(l[position])
+                        Db.getDatabase(this@Timetable).LNDao().delete(l[position])
 
                         val i = Intent(this@Timetable, Timetable::class.java)
                         i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
@@ -102,10 +111,12 @@ class Timetable : AppCompatActivity() {
             )
         }
         this.let {
-            val l = Db.getDatabase(it.applicationContext).LesDaysDao().getth()
+            val l = Db.getDatabase(it.applicationContext).LNDao().getAll()
             Thursday.layoutManager =
                 LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            Thursday.adapter = LesAdapter(l)
+            Thursday.adapter = LesAdapter(l.filter { item -> item.day == "Четверг" }.map { item ->
+                Pair(item.student, item.time)
+            })
             Thursday.addOnItemTouchListener(
                 RecyclerItemClickListener(this, Thursday, object :
                     RecyclerItemClickListener.OnItemClickListener {
@@ -115,7 +126,7 @@ class Timetable : AppCompatActivity() {
 
                     override fun onLongItemClick(view: View?, position: Int) {
 
-                        Db.getDatabase(this@Timetable).LesDaysDao().delete(l[position])
+                        Db.getDatabase(this@Timetable).LNDao().delete(l[position])
 
                         val i = Intent(this@Timetable, Timetable::class.java)
                         i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
@@ -127,10 +138,12 @@ class Timetable : AppCompatActivity() {
         }
 
         this.let {
-            val l = Db.getDatabase(it.applicationContext).LesDaysDao().getf()
+            val l = Db.getDatabase(it.applicationContext).LNDao().getAll()
             Friday.layoutManager =
                 LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            Friday.adapter = LesAdapter(l)
+            Friday.adapter = LesAdapter(l.filter { item -> item.day == "Пятница" }.map { item ->
+                Pair(item.student, item.time)
+            })
             Friday.addOnItemTouchListener(
                 RecyclerItemClickListener(this, Friday, object :
                     RecyclerItemClickListener.OnItemClickListener {
@@ -140,7 +153,7 @@ class Timetable : AppCompatActivity() {
 
                     override fun onLongItemClick(view: View?, position: Int) {
 
-                        Db.getDatabase(this@Timetable).LesDaysDao().delete(l[position])
+                        Db.getDatabase(this@Timetable).LNDao().delete(l[position])
 
                         val i = Intent(this@Timetable, Timetable::class.java)
                         i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
@@ -152,10 +165,12 @@ class Timetable : AppCompatActivity() {
         }
 
         this.let {
-            val l = Db.getDatabase(it.applicationContext).LesDaysDao().getsat()
+            val l = Db.getDatabase(it.applicationContext).LNDao().getAll()
             Saturday.layoutManager =
                 LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            Saturday.adapter = LesAdapter(l)
+            Saturday.adapter = LesAdapter(l.filter { item -> item.day == "Суббота" }.map { item ->
+                Pair(item.student, item.time)
+            })
             Saturday.addOnItemTouchListener(
                 RecyclerItemClickListener(this, Saturday, object :
                     RecyclerItemClickListener.OnItemClickListener {
@@ -165,7 +180,7 @@ class Timetable : AppCompatActivity() {
 
                     override fun onLongItemClick(view: View?, position: Int) {
 
-                        Db.getDatabase(this@Timetable).LesDaysDao().delete(l[position])
+                        Db.getDatabase(this@Timetable).LNDao().delete(l[position])
 
                         val i = Intent(this@Timetable, Timetable::class.java)
                         i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
@@ -176,20 +191,21 @@ class Timetable : AppCompatActivity() {
             )
         }
         this.let {
-            val l = Db.getDatabase(it.applicationContext).LesDaysDao().gets()
+            val l = Db.getDatabase(it.applicationContext).LNDao().getAll()
             Sunday.layoutManager =
                 LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            Sunday.adapter = LesAdapter(l)
+            Sunday.adapter = LesAdapter(l.filter { item -> item.day == "Воскресенье" }.map { item ->
+                Pair(item.student, item.time)
+            })
             Sunday.addOnItemTouchListener(
                 RecyclerItemClickListener(this, Sunday, object :
                     RecyclerItemClickListener.OnItemClickListener {
                     override fun onItemClick(view: View?, position: Int) {
 
                     }
-
                     override fun onLongItemClick(view: View?, position: Int) {
 
-                        Db.getDatabase(this@Timetable).LesDaysDao().delete(l[position])
+                        Db.getDatabase(this@Timetable).LNDao().delete(l[position])
 
                         val i = Intent(this@Timetable, Timetable::class.java)
                         i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)

@@ -14,11 +14,9 @@ import data.Db
 import data.StudentsTable
 
 
-
 class DialogAdd : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): AlertDialog {
 
-        // val context = this
         val context = activity
         val li = LayoutInflater.from(context)
         val view = li.inflate(R.layout.add_st_dialog, null)
@@ -26,9 +24,7 @@ class DialogAdd : DialogFragment() {
         val addButton = view.findViewById<Button>(R.id.buttonInsideModal)
         val closeDialogButton = view.findViewById<Button>(R.id.closeDialogButton)
         mDialogBuilder.setView(view)
-
         val alertDialog = mDialogBuilder.create()
-
         addButton.setOnClickListener {
             val inputname = view.findViewById<TextInputEditText>(R.id.textInputEditText)
             val inputgrade = view.findViewById<TextInputEditText>(R.id.editText)
@@ -52,19 +48,15 @@ class DialogAdd : DialogFragment() {
                     purpose = Purpose,
                     cost = Cost
                 )
-
                 this.activity?.let { it1 ->
                     Db.getDatabase(it1.applicationContext).StudentsDao().insert(st)
                 }
-
                 alertDialog.hide()
                 val i = Intent(activity, Students::class.java)
                 i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                 startActivity(i)
-
             }
         }
-
         closeDialogButton.setOnClickListener {
             alertDialog.hide();
         }

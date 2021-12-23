@@ -6,10 +6,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import data.JoinDao
-import data.LesDay
 
-class LesAdapter(private val lessons: List<LesDay >) :
+class LesAdapter(private val lessons: List<Pair<String, String>>) :
     RecyclerView.Adapter<LesAdapter.LesViewHolder>() {
 
     class LesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -45,8 +43,8 @@ class LesAdapter(private val lessons: List<LesDay >) :
     }
 
     override fun onBindViewHolder(holder: LesViewHolder, position: Int) {
-        holder.n.text = lessons[position].student
-        holder.t.text = lessons[position].time
+        holder.n.text = lessons[position].first
+        holder.t.text = lessons[position].second
 
     }
 

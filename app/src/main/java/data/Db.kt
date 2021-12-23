@@ -5,12 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [StudentsTable::class, LessonsTable::class, LN::class, LesDay::class], version = 1)
+@Database(entities = [StudentsTable::class, LN::class], version = 1)
 abstract class Db : RoomDatabase() {
     abstract fun StudentsDao(): StudentsDao
-    abstract fun LessonsDao(): LessonsDao
-    abstract fun JoinDao(): JoinDao
-    abstract fun LesDaysDao(): LesDaysDao
+    abstract fun LNDao(): LNDao
 
     companion object {
         var database: Db? = null

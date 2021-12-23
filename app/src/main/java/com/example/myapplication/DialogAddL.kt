@@ -73,7 +73,7 @@ class DialogAddL : DialogFragment() {
                     student = Name,
                 )
                 this.activity?.let { it1 ->
-                    Db.getDatabase(it1.applicationContext).JoinDao().insert(les)
+                    Db.getDatabase(it1.applicationContext).LNDao().insert(les)
                 }
 
                 alertDialog.hide()

@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="92dp"
+        android:layout_width="99dp"
         android:layout_height="40dp"
         android:text="@string/add"
         android:textSize="10sp"

@@ -7,6 +7,7 @@
     tools:context=".Students">
 
     <Button
+        style="@style/MyTextStyleB"
         android:id="@+id/button9"
         android:layout_width="101dp"
         android:layout_height="41dp"
@@ -20,6 +21,7 @@
         app:layout_constraintVertical_bias="0.939" />
 
     <Button
+        style="@style/MyTextStyleB"
         android:id="@+id/button5"
         android:layout_width="92dp"
         android:layout_height="40dp"

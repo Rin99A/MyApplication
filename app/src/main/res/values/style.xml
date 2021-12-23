@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTextStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">#619196</item>
+    </style>
+
+    <style name="MyTextStyleT" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">#619196</item>
+        <item name="android:background">#E7E4E1</item>
+    </style>
+
+    <style name="MyTextStyleB">
+        <item name="android:background">#DFC7C1</item>
+        <item name="android:textColor">#619196</item>
+        <item name="android:textSize">10sp</item>
+
+    </style>
+
+
+</resources>
